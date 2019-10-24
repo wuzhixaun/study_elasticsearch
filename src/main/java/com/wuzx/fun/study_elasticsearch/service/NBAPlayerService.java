@@ -1,0 +1,41 @@
+package com.wuzx.fun.study_elasticsearch.service;
+
+import com.wuzx.fun.study_elasticsearch.model.NBAPlayer;
+
+import java.io.IOException;
+import java.util.Map;
+
+public interface NBAPlayerService {
+
+    /**
+     * 增加索引文档
+     */
+    public Boolean addPlayer(NBAPlayer nbaPlayer, String id) throws IOException;
+
+    /**
+     * 修改索引
+     */
+    public Boolean updatePlayer(NBAPlayer nbaPlayer,String id) throws IOException;
+
+    /**
+     * 删除文档信息
+     */
+    public Boolean deletePlayer(String id) throws IOException;
+
+    /**
+     * 获取一个文档信息
+     */
+    public Map<String, Object> getPlayer(String id) throws IOException;
+
+
+    /**
+     * 删除所有的文档信息
+     */
+    public Boolean deleteAllPlayer() throws IOException;
+
+
+    /**
+     * 导入mysql数据到elasticsearch
+     */
+    public Object importNbaPlayerToES() throws IOException;
+}

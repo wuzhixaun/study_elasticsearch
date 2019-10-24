@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:mysql://rm-wz9s7ffvere4dy5zdvo.mysql.rds.aliyuncs.com:3306/elasticsearch?useUnicode=true&characterEncoding=utf8&useSSL=false
+    url: jdbc:mysql://rm-wz9s7ffvere4dy5zdfo.mysql.rds.aliyuncs.com:3306/elasticsearch?useUnicode=true&characterEncoding=utf8&useSSL=false
     username: root
     password: Wzx123456
     #druid连接池配置
@@ -18,9 +18,6 @@ spring:
       testWhileIdle: true
       testOnBorrow: false
       testOnReturn: false
-
-
-    driver-class-name: com.mysql.jdbc.Driver
 
 #服务启动端口好
 server:
