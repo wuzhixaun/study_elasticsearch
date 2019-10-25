@@ -3,6 +3,7 @@ package com.wuzx.fun.study_elasticsearch.service;
 import com.wuzx.fun.study_elasticsearch.model.NBAPlayer;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.Map;
 
 public interface NBAPlayerService {
@@ -38,4 +39,34 @@ public interface NBAPlayerService {
      * 导入mysql数据到elasticsearch
      */
     public Object importNbaPlayerToES() throws IOException;
+
+
+    /**
+     * 通过field 和对于的值匹配球员
+     * @param key
+     * @param value
+     * @return
+     * @throws IOException
+     */
+    public List<NBAPlayer> searchMatch(String key, String value) throws IOException;
+
+
+    /**
+     * 通过词条查询
+     * @param key
+     * @param value
+     * @return
+     * @throws IOException
+     */
+    public List<NBAPlayer> searchByTerm(String key, String value) throws IOException;
+
+
+    /**
+     * 通过字母查询球员(任意字母的首字以xx开头)
+     * @param key
+     * @param value
+     * @return
+     * @throws IOException
+     */
+    public List<NBAPlayer> searchByPrefix(String key, String value) throws IOException;
 }

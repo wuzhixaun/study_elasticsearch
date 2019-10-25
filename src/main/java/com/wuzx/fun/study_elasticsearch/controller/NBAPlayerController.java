@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -28,12 +29,12 @@ public class NBAPlayerController {
     }
 
     @RequestMapping("/deletePlayer")
-    public Object deletePlayer( String id) throws IOException {
+    public Object deletePlayer(String id) throws IOException {
         return nbaPlayerService.deletePlayer(id);
     }
 
     @RequestMapping("/getPlayer")
-    public Map<String, Object> getPlayer( String id) throws IOException {
+    public Map<String, Object> getPlayer(String id) throws IOException {
         return nbaPlayerService.getPlayer(id);
     }
 
@@ -51,5 +52,21 @@ public class NBAPlayerController {
         }
         return null;
 
+    }
+
+
+    @RequestMapping("/searchMatch")
+    public List<NBAPlayer> searchMatch(String key, String value) throws IOException {
+        return nbaPlayerService.searchMatch(key, value);
+    }
+
+    @RequestMapping("/searchByTerm")
+    public List<NBAPlayer> searchByTerm(String key, String value) throws IOException {
+        return nbaPlayerService.searchByTerm(key, value);
+    }
+
+    @RequestMapping("/searchByPrefix")
+    public List<NBAPlayer> searchByPrefix(String key, String value) throws IOException {
+        return nbaPlayerService.searchByPrefix(key, value);
     }
 }
